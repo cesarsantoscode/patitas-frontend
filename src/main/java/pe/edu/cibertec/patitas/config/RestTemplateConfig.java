@@ -11,8 +11,9 @@ import java.time.Duration;
 public class RestTemplateConfig {
 
     @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+    public RestTemplate restTemplateAutenticacion(RestTemplateBuilder builder) {
         return builder
+                .rootUri("http://localhost:8081/autenticacion")
                 .setReadTimeout(Duration.ofSeconds(30))
                 .build();
     }
