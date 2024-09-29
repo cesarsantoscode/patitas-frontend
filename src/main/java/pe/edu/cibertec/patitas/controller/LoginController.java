@@ -46,9 +46,8 @@ public class LoginController {
         try {
 
             // Invocar servicio de autenticación
-            String endpoint = "http://localhost:8081/autenticacion/login";
             LoginRequestDTO loginRequestDTO = new LoginRequestDTO(tipoDocumento, numeroDocumento, password);
-            LoginResponseDTO loginResponseDTO = restTemplate.postForObject(endpoint, loginRequestDTO, LoginResponseDTO.class);
+            LoginResponseDTO loginResponseDTO = restTemplate.postForObject("/login", loginRequestDTO, LoginResponseDTO.class);
 
             // Validar respuesta de servicio
             if (loginResponseDTO.codigo().equals("00")){
