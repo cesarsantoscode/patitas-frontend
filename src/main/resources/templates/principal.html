@@ -22,20 +22,26 @@
     </div>
 
     <div class="mb-3">
-        <div class="list-group list-group-horizontal">
-            <a href="#" class="list-group-item list-group-item-action active">
-                Principal
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                Ver mascotas
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                Hacer donación
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                Cerrar sesión
-            </a>
-        </div>
+
+        <form th:action="@{/login/cerrar-sesion-client}" method="post">
+            <div class="list-group list-group-horizontal">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Principal
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Ver mascotas
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Hacer donación
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <input type="hidden" name="tipoDocumento" th:value="${tipoDocumento}">
+                    <input type="hidden" name="numeroDocumento" th:value="${numeroDocumento}">
+                    <button type="submit" class="btn btn-primary btn-lg">Cerrar sesión</button>
+                </a>
+            </div>
+        </form>
+
     </div>
 
 </div>
